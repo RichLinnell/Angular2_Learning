@@ -53,8 +53,50 @@ class TaskService {
 		});
 	}
 }
+
+@Pipe({
+	name: 'pomodoroFormattedTime'
+})
+class FormattedTimePipe implements PipeTransform {
+	transform(totalMinutes: number): string {
+		let minutes: number = totalMinutes % 60;
+		let hours: number = Math.floor(totalMinutes / 60);
+		return `${hours}h:${minutes}m`;
+	}
+}
+
+@Pipe({
+	name: 'pomodoroQueuedOnly',
+	pure: false
+})
+class QueuedOnlyPipe implements PipeTransform{
+	transform(tasks: Task[], ...args: any[]): Task[] {
+		return tasks.filter((task: Task) => {
+			return task.queued === args[0];
+		});
+	}	
+}
+
+@Component({
+	selector: 'pomodoro-task-icons',
+	template: `<img *ngFor="let icon of icons"
+					src="/assets/img/pomodoro.png"
+					width="{{size}}">`
+})
+class TaskIconsComponent implements OnInit {
+	@Input() task: Task;
+	icons: Object[] = [];
+	@Input() size: number;
+
+	ngOnInit() {
+		this.icons.length = this.task.pomodorosRequired;
+		this.icons.fill({name: this.task.name});
+	}
+}
 @Component({
 		selector: 'pomodoro-tasks',
+		directives: [TaskIconsComponent],
+		pipes: [FormattedTimePipe, QueuedOnlyPipe],
 		styleUrls: ['pomodoro-tasks.css'],
 		templateUrl: 'pomodoro-tasks.html'
 	})

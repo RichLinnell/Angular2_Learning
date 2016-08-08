@@ -61,11 +61,31 @@ class TaskService {
 	class TasksComponent {
 		today: Date;
 		tasks: Task[];
+		queuedPomodoros: number;
+		queueHeaderMapping: any = {
+			'=0': 'No pomodoros',
+			'=1': 'One pomodoro',
+			'other': '# pomodoros'
+		};
 		
 		constructor() {
 			const taskService: TaskService = new TaskService();
 			this.tasks = taskService.taskStore;
 			this.today = new Date();
+			this.updateQueuedPomodoros();
+		}
+
+		toggleTask(task: Task): void {
+			task.queued = !task.queued;
+			this.updateQueuedPomodoros();
+		}
+
+		private updateQueuedPomodoros(): void {
+			this.queuedPomodoros = this.tasks
+				.filter((task: Task) => task.queued)
+				.reduce((pomodoros: number, queuedTask: Task) => {
+					return pomodoros + queuedTask.pomodorosRequired;
+			}, 0);
 		}
 	};
 

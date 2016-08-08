@@ -1,6 +1,12 @@
 <div class="container text-center">
 	<img src="assets/img/pomodoro.png" alt="Pomodoro"/>
 	<div class="container">
+		<div>
+			<h3>
+				{{ queuedPomodoros | i18nPlural:queueHeaderMapping }} for today
+				<span class="small" *ngIf="queuedPomodoros > 0">(Estimated time: {{ queuedPomodoros * 25}})</span>
+			</h3>
+		</div>
 		<h4>Tasks backlog</h4>
 		<table class="table">
 			<thead>
@@ -14,7 +20,11 @@
 			</thead>
 			<tbody>
 				<tr *ngFor = "let task of tasks; let i = index">
-					<th scope="row">{{i}}</th>
+					<th scope="row">{{i}}
+					<span *ngIf="task.queued" class="label label-info">
+						Queued
+					</span>
+					</th>
 					<td>{{task.name | slice: 0:35 }}
 						<span [hidden]="task.name.length < 35">...</span>
 					</td>
@@ -24,7 +34,24 @@
 					</td>
 					<td class="text-center">{{task.pomodorosRequired}}</td>
 					<td>
-						[Future options...]
+						<button 
+							type="button"
+							class="btn btn-default btn-xs"
+							(click)="toggleTask(task)"
+							[ngSwitch]="task.queued">
+							<template [ngSwitchWhen]="false">
+								<i class="glyphicon glyphicon-plus-sign"></i>
+								Add
+							</template>
+							<template [ngSwitchWhen]="true">
+								<i class="glyphicon glyphicon-minus-sign"></i>
+								Remove
+							</template>
+							<template ngSwitchDefault>
+							 <i class="glyphicon glyphicon-plus-sign"></i>
+								Add
+							</template>
+						</button>
 					</td>
 				</tr>
 			</tbody>

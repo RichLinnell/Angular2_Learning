@@ -19,4 +19,14 @@ class DuckTapeComponent{
 	}
 
 }
+
+class Nonesense{
+	private _foo: number;
+	get foo(): number{
+		return this._foo;
+	}
+}
+
+let n:Nonesense = new Nonesense();
+n.foo = 6;
 bootstrap(DuckTapeComponent);

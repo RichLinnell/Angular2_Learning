@@ -4,6 +4,94 @@
 		"selected_items":
 		[
 			[
+				"Event",
+				"EventEmitter	alias"
+			],
+			[
+				"cle",
+				"clearInterval	function"
+			],
+			[
+				"import",
+				"import	imports a module …"
+			],
+			[
+				"new",
+				"newMethod	local var"
+			],
+			[
+				"a",
+				"args	parameter"
+			],
+			[
+				"ori",
+				"originalMethod	local var"
+			],
+			[
+				"A",
+				"Array	interface"
+			],
+			[
+				"Lo",
+				"LogChanges	function"
+			],
+			[
+				"prop",
+				"propertyValue	local var"
+			],
+			[
+				"de",
+				"defineProperty	method"
+			],
+			[
+				"Gr",
+				"Greeting	class"
+			],
+			[
+				"p",
+				"push	method"
+			],
+			[
+				"IEx",
+				"IExceptionHandlerSettings	interface"
+			],
+			[
+				"IE",
+				"IExceptionArrayItem	interface"
+			],
+			[
+				"N",
+				"Nonesense	class"
+			],
+			[
+				"t",
+				"togglePause	method"
+			],
+			[
+				"set",
+				"setInterval	function"
+			],
+			[
+				"se",
+				"seconds	property"
+			],
+			[
+				"s",
+				"seconds	property"
+			],
+			[
+				"boo",
+				"bootstrap	alias"
+			],
+			[
+				"const",
+				"constructor	keyword"
+			],
+			[
+				"nu",
+				"number	keyword"
+			],
+			[
 				"cl",
 				"class	class …"
 			]
@@ -12,37 +100,29 @@
 	"buffers":
 	[
 		{
-			"contents": "import { Component } from '@angular/core';\nimport { bootstrap } from '@angular/platform-browser-dynamic';\n\n@Component({\n    selector: 'hello-angular',\n    template: '<h1> {{greeting}} </h1>'\n})\n\nclass HelloAngularComponent {\n    greeting: string;\n    constructor() {\n        this.greeting = 'Hello Angular 2!';\n    }\n}\n\n\nbootstrap(HelloAngularComponent); //Component is bootstrapped!",
-			"file": "hello-angular.ts",
-			"file_size": 397,
-			"file_write_time": 131146363627621523,
+			"file": "Greeter.ts",
 			"settings":
 			{
-				"buffer_size": 383,
+				"buffer_size": 684,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "index.html",
+			"file": "Other.ts",
 			"settings":
 			{
-				"buffer_size": 656,
+				"buffer_size": 101,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "package.json",
+			"contents": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { bootstrap } from '@angular/platform-browser-dynamic';\n\n@Component({\n	selector: 'countdown',\n	template: `<h1>Time left: {{seconds}}</h1>`\n})\n\nclass CountdownComponent {\n	@Input() seconds: number;\n	intervalId: number;\n	@Output() complete: EventEmitter<any> = new EventEmitter();\n	@Output() progress: EventEmitter<number> = new EventEmitter();\n\n	constructor(){\n		this.intervalId = setInterval(() => this.tick(), 1000);\n	}\n\n	private tick(): void {\n		if(--this.seconds < 1) {\n			clearInterval(this.intervalId);\n			this.complete.emit(null);\n		}\n		this.progress.emit(this.seconds);\n	}\n}\n\n@Component({\n	selector: 'pomodoro-timer',\n	directives: [CountdownComponent],\n	template: `<div class=\"container text-center\">\n	<img src=\"assets/img/pomodoro.png\" />\n	<countdown [seconds]=\"25\" \n		(complete)=\"onCountdownCompleted()\"\n		#counter>\n	</countdown>\n	<p>\n		<button class=\"btn btn-default\" (click)=\"counter.seconds = 25\">Reset countdown\n		</button>\n	</p>\n	<p *ngIf=\"counter.seconds < 10\">\n		Beware only <b>{{counter.seconds}} seconds</b> left.\n	</p>\n	</div>`\n})\nclass PomodoroTimerComponent{\n	\n	onCountdownCompleted(): void {\n		alert(\"Times up!\");\n	}\n}\nbootstrap(PomodoroTimerComponent);\n",
+			"file": "pomodoro-timer.ts",
+			"file_size": 1323,
+			"file_write_time": 131149680149762796,
 			"settings":
 			{
-				"buffer_size": 1223,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "systemjs.config.js",
-			"settings":
-			{
-				"buffer_size": 804,
+				"buffer_size": 1255,
 				"line_ending": "Windows"
 			}
 		},
@@ -50,16 +130,17 @@
 			"file": "tsconfig.json",
 			"settings":
 			{
-				"buffer_size": 356,
+				"buffer_size": 407,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "typings.json",
+			"file": "Greetings.ts",
 			"settings":
 			{
-				"buffer_size": 248,
-				"line_ending": "Windows"
+				"buffer_size": 200,
+				"line_ending": "Windows",
+				"name": "export class Greeting{"
 			}
 		}
 	],
@@ -71,15 +152,23 @@
 	"command_palette":
 	{
 		"height": 490.0,
-		"last_filter": "pack	",
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"Github: Repository"
+			],
 			[
 				"pack	",
 				"Package Control: Install Package"
 			]
 		],
-		"width": 593.0
+		"width": 912.0
 	},
 	"console":
 	{
@@ -100,6 +189,20 @@
 	},
 	"file_history":
 	[
+		"/C/Windows/Logs/CBS/CBS.log",
+		"/C/angular2/.gitignore",
+		"/C/angular2/tsconfig.json",
+		"/C/angular2/systemjs.config.js",
+		"/C/angular2/package.json",
+		"/C/angular2/Greeter.ts",
+		"/C/angular2/pomodoro-timer.ts",
+		"/C/angular2/index.html",
+		"/C/angular2/hello-angular.ts",
+		"/C/angular2/iVehicle.ts",
+		"/C/angular2/duck-tape.ts",
+		"/C/angular2/typings.json",
+		"/C/Users/Rich/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/angular2/assets/img/pomodoro.png"
 	],
 	"find":
 	{
@@ -134,24 +237,54 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "hello-angular.ts",
+					"file": "Greeter.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 383,
+						"buffer_size": 684,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								319,
-								319
+								373,
+								373
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Other.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								101,
+								101
 							]
 						],
 						"settings":
@@ -163,54 +296,54 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 656,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "package.json",
+					"file": "pomodoro-timer.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1223,
+						"buffer_size": 1255,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								895,
+								902
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 193.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "tsconfig.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								164,
+								170
 							]
 						],
 						"settings":
@@ -227,12 +360,12 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "systemjs.config.js",
+					"buffer": 4,
+					"file": "Greetings.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 804,
+						"buffer_size": 200,
 						"regions":
 						{
 						},
@@ -245,73 +378,15 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"auto_name": "export class Greeting{",
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "tsconfig.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 356,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "typings.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 248,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -323,7 +398,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 43.0
 	},
 	"layout":
 	{
@@ -352,9 +427,17 @@
 	{
 		"height": 0.0
 	},
+	"output.exec":
+	{
+		"height": 160.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 160.0
 	},
 	"pinned_build_system": "",
 	"project": "angular2.sublime-project",

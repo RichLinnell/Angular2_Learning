@@ -10,13 +10,12 @@
 				<span *ngFor="let queuedTask of tasks | pomodoroQueuedOnly: true">
 					<pomodoro-task-icons
 						[task]="queuedTask"
-						size="50"
-						(mouseover)="tooltip.innerText = queuedTask.name"
-						(mouseout)="tooltip.innerText = 'Mouseover for details'">
+						[taskTooltip]="tooltip"
+						size="50">
 					</pomodoro-task-icons>
 				</span>
 			</p>
-			<p #tooltip [hidden]="queuedPomodoros === 0">Mouseover for details</p>
+			<p #tooltip>Mouseover for details</p>
 		</div>
 		<h4>Tasks backlog</h4>
 		<table class="table">

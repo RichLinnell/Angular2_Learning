@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"task",
+				"taskTooltip	property"
+			],
+			[
+				"se",
+				"selector	property"
+			],
+			[
+				"Pipe",
+				"PipeTransform	alias"
+			],
+			[
+				"Tas",
+				"TaskIconsComponent	class"
+			],
+			[
+				"Tasks",
+				"TasksComponent	class"
+			],
+			[
+				"T",
+				"TasksService	const"
+			],
+			[
+				"templ",
+				"templateUrl	property"
+			],
+			[
+				"Pip",
+				"PipeTransform	alias"
+			],
+			[
 				"Event",
 				"EventEmitter	alias"
 			],
@@ -72,10 +104,6 @@
 				"setInterval	function"
 			],
 			[
-				"se",
-				"seconds	property"
-			],
-			[
 				"s",
 				"seconds	property"
 			],
@@ -100,29 +128,54 @@
 	"buffers":
 	[
 		{
-			"file": "Greeter.ts",
-			"settings":
-			{
-				"buffer_size": 684,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Other.ts",
-			"settings":
-			{
-				"buffer_size": 101,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { bootstrap } from '@angular/platform-browser-dynamic';\n\n@Component({\n	selector: 'countdown',\n	template: `<h1>Time left: {{seconds}}</h1>`\n})\n\nclass CountdownComponent {\n	@Input() seconds: number;\n	intervalId: number;\n	@Output() complete: EventEmitter<any> = new EventEmitter();\n	@Output() progress: EventEmitter<number> = new EventEmitter();\n\n	constructor(){\n		this.intervalId = setInterval(() => this.tick(), 1000);\n	}\n\n	private tick(): void {\n		if(--this.seconds < 1) {\n			clearInterval(this.intervalId);\n			this.complete.emit(null);\n		}\n		this.progress.emit(this.seconds);\n	}\n}\n\n@Component({\n	selector: 'pomodoro-timer',\n	directives: [CountdownComponent],\n	template: `<div class=\"container text-center\">\n	<img src=\"assets/img/pomodoro.png\" />\n	<countdown [seconds]=\"25\" \n		(complete)=\"onCountdownCompleted()\"\n		#counter>\n	</countdown>\n	<p>\n		<button class=\"btn btn-default\" (click)=\"counter.seconds = 25\">Reset countdown\n		</button>\n	</p>\n	<p *ngIf=\"counter.seconds < 10\">\n		Beware only <b>{{counter.seconds}} seconds</b> left.\n	</p>\n	</div>`\n})\nclass PomodoroTimerComponent{\n	\n	onCountdownCompleted(): void {\n		alert(\"Times up!\");\n	}\n}\nbootstrap(PomodoroTimerComponent);\n",
 			"file": "pomodoro-timer.ts",
-			"file_size": 1323,
-			"file_write_time": 131149680149762796,
 			"settings":
 			{
-				"buffer_size": 1255,
+				"buffer_size": 1010,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "pomodoro-timer.html",
+			"settings":
+			{
+				"buffer_size": 448,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1002,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "import {\n	Component,\n	Input,\n	Pipe,\n	PipeTransform,\n	Directive,\n	OnInit,\n	HostListener\n} from '@angular/core';\nimport {bootstrap} from '@angular/platform-browser-dynamic';\n\ninterface Task {\n	name: string;\n	deadline: Date;\n	queued: boolean;\n	pomodorosRequired: number;\n}\n\nclass TaskService {\n	public taskStore: Array<Task> = [];\n\n	constructor(){\n		const tasks = [\n		{			\n			name: \"Code an HTML Table\",\n			deadline: \"June 23 2015\",\n			pomodorosRequired: 1\n		},\n		{\n			name: \"Sketch a wireframe for the new homepage\",\n			deadline: \"June 24 2016\",\n			pomodorosRequired: 2\n		},\n		{\n			name: \"Style table with bootstrap styles\",\n			deadline: \"June 25 2016\",\n			pomodorosRequired: 1\n		},\n		{\n			name: \"Reinforce SEO with custom sitemap.xml\",\n			deadline: \"June 26 2016\",\n			pomodorosRequired: 3\n		},\n		];\n\n		this.taskStore = tasks.map(task => {\n			return {\n				name: task.name,\n				deadline: new Date(task.deadline),\n				queued: false,\n				pomodorosRequired: task.pomodorosRequired\n			};\n		});\n	}\n}\n\n@Pipe({\n	name: 'pomodoroFormattedTime'\n})\nclass FormattedTimePipe implements PipeTransform {\n	transform(totalMinutes: number): string {\n		let minutes: number = totalMinutes % 60;\n		let hours: number = Math.floor(totalMinutes / 60);\n		return `${hours}h:${minutes}m`;\n	}\n}\n\n@Pipe({\n	name: 'pomodoroQueuedOnly',\n	pure: false\n})\nclass QueuedOnlyPipe implements PipeTransform{\n	transform(tasks: Task[], ...args: any[]): Task[] {\n		return tasks.filter((task: Task) => {\n			return task.queued === args[0];\n		});\n	}	\n}\n\n@Directive({\n	selector: '[task]'\n})\nclass TaskTooltipDirective {\n	private defaultTooltipText: string;\n	@Input() task: Task;\n	@Input() taskTooltip: any;\n\n	@HostListener('mouseover')\n	onMouseOver(){\n		if(!this.defaultTooltipText && this.taskTooltip){\n			this.defaultTooltipText = this.taskTooltip.innerText;\n		}\n		this.taskTooltip.innerText = this.task.name;\n	}\n	@HostListener('mouseout')\n	onMouseOut() {\n		if(this.taskTooltip){\n			this.taskTooltip.innerText = this.defaultTooltipText;\n		}\n	}\n}\n\n@Component({\n	selector: 'pomodoro-task-icons',\n	template: `<img *ngFor=\"let icon of icons\"\n					src=\"/assets/img/pomodoro.png\"\n					width=\"{{size}}\">`\n})\nclass TaskIconsComponent implements OnInit {\n	@Input() task: Task;\n	icons: Object[] = [];\n	@Input() size: number;\n\n	ngOnInit() {\n		this.icons.length = this.task.pomodorosRequired;\n		this.icons.fill({name: this.task.name});\n	}\n}\n@Component({\n		selector: 'pomodoro-tasks',\n		directives: [TaskIconsComponent, TaskTooltipDirective],\n		pipes: [FormattedTimePipe, QueuedOnlyPipe],\n		styleUrls: ['pomodoro-tasks.css'],\n		templateUrl: 'pomodoro-tasks.html'\n	})\n	class TasksComponent {\n		today: Date;\n		tasks: Task[];\n		queuedPomodoros: number;\n		queueHeaderMapping: any = {\n			'=0': 'No pomodoros',\n			'=1': 'One pomodoro',\n			'other': '# pomodoros'\n		};\n		\n		constructor() {\n			const taskService: TaskService = new TaskService();\n			this.tasks = taskService.taskStore;\n			this.today = new Date();\n			this.updateQueuedPomodoros();\n		}\n\n		toggleTask(task: Task): void {\n			task.queued = !task.queued;\n			this.updateQueuedPomodoros();\n		}\n\n		private updateQueuedPomodoros(): void {\n			this.queuedPomodoros = this.tasks\n				.filter((task: Task) => task.queued)\n				.reduce((pomodoros: number, queuedTask: Task) => {\n					return pomodoros + queuedTask.pomodorosRequired;\n			}, 0);\n		}\n	};\n\n\n\nbootstrap(TasksComponent);",
+			"file": "pomodoro-tasks.ts",
+			"file_size": 3513,
+			"file_write_time": 131152407586503425,
+			"settings":
+			{
+				"buffer_size": 3359,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "pomodoro-tasks.css",
+			"settings":
+			{
+				"buffer_size": 74,
+				"line_ending": "Windows",
+				"name": "h3, p {"
+			}
+		},
+		{
+			"file": "pomodoro-tasks.html",
+			"settings":
+			{
+				"buffer_size": 1913,
 				"line_ending": "Windows"
 			}
 		},
@@ -152,12 +205,12 @@
 	"command_palette":
 	{
 		"height": 490.0,
-		"last_filter": "",
+		"last_filter": "Package Control: ",
 		"selected_items":
 		[
 			[
 				"Package Control: ",
-				"Package Control: Install Package"
+				"Package Control: List Packages"
 			],
 			[
 				"git",
@@ -189,12 +242,13 @@
 	},
 	"file_history":
 	[
+		"/C/angular2/Other.ts",
+		"/C/angular2/Greeter.ts",
 		"/C/Windows/Logs/CBS/CBS.log",
 		"/C/angular2/.gitignore",
 		"/C/angular2/tsconfig.json",
 		"/C/angular2/systemjs.config.js",
 		"/C/angular2/package.json",
-		"/C/angular2/Greeter.ts",
 		"/C/angular2/pomodoro-timer.ts",
 		"/C/angular2/index.html",
 		"/C/angular2/hello-angular.ts",
@@ -237,24 +291,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Greeter.ts",
+					"file": "pomodoro-timer.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 684,
+						"buffer_size": 1010,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								373,
-								373
+								324,
+								324
 							]
 						],
 						"settings":
@@ -262,6 +316,66 @@
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"translate_tabs_to_spaces": false,
 							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "pomodoro-timer.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 448,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								441,
+								441
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1002,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								630,
+								630
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -271,20 +385,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "Other.ts",
+					"buffer": 3,
+					"file": "pomodoro-tasks.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 101,
+						"buffer_size": 3359,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								101,
-								101
+								3331,
+								3331
 							]
 						],
 						"settings":
@@ -296,41 +410,68 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "pomodoro-timer.ts",
+					"buffer": 4,
+					"file": "pomodoro-tasks.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1255,
+						"buffer_size": 74,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								895,
-								902
+								74,
+								74
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"use_tab_stops": false
+							"auto_name": "h3, p {",
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 193.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
+					"file": "pomodoro-tasks.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1913,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								493,
+								493
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "tsconfig.json",
 					"semi_transient": false,
 					"settings":
@@ -356,11 +497,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 7,
 					"file": "Greetings.ts",
 					"semi_transient": false,
 					"settings":
@@ -386,7 +527,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]

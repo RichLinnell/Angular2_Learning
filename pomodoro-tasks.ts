@@ -154,4 +154,6 @@ class TaskIconsComponent implements OnInit {
 		}
 	};
 
+
+
 bootstrap(TasksComponent);

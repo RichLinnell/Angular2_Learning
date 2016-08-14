@@ -7,6 +7,7 @@ import {
 	Task,
 	SHARED_PIPES
 } from '../shared/shared';
+import {Router} from '@angular/router-deprecated'
 
 @Component({
 	selector: 'pomodoro-tasks',
@@ -24,15 +25,20 @@ export default class TasksComponent implements OnInit {
 
 	constructor(
 		private taskService: TaskService,
-		private settingsService: SettingsService){
+		private settingsService: SettingsService,
+		private router: Router)	{
 		this.tasks = this.taskService.taskStore;
 		this.today = new Date();
 		this.queueHeaderMapping = settingsService.pluralsMap.tasks;
-		this.timerMinutes - settingsService.timerMinutes;
+		this.timerMinutes = settingsService.timerMinutes;
 	}
 
 	ngOnInit():void {
 		this.updateQueuedPomodoros();
+		this.taskService.taskFeed.subscribe(newTask => {
+			this.tasks.push(newTask);
+			this.updateQueuedPomodoros();
+		});
 	}
 
 	toggleTask(task: Task): void {
@@ -46,5 +52,9 @@ export default class TasksComponent implements OnInit {
 		.reduce((pom: number, queuedTask: Task) => {
 			return pom + queuedTask.pomodorosRequired;
 		}, 0);
+	}
+
+	workOn(): void {
+		this.router.navigate(['TimerComponent']);
 	}
 };

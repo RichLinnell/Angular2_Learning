@@ -1,32 +1,39 @@
 <form class="container">
 	<h3>Task Editor:</h3>
 	<div class="form-group">
+		<p class="text-muted" *ngIf="name.untouched">
+			start here by entering the task name.
+		</p>
 		<input type="text"
 			class="form-control"
 			placeholder="Task name"
-			required>
+			required
+			[(ngModel)]="task.name" #name="ngForm">
 	</div>
 
 	<div class="form-group">
-		<input type="Date" class="form-control" required>
+		<input type="date" 
+		class="form-control" required
+		[(ngModel)]="task.deadline">
 	</div>
 
 	<div class="form-group">
 		<input type="number" 
 		   class="form-control" 
-		   placeholder="Pomodoros required" 
+		   placeholder="Pomodoros required" required
 		   min="1"
 		   max="4"
-		   required>
+		   [(ngModel)]="task.pomodorosRequired">
 	</div>
 
 	<div class="form-group">
-		<input type="checkbox" name="queued">
+		<input type="checkbox" name="queued"
+			[(ngModel)]="task.queued">
 		<label for="queued"> this task by default?</label>
 	</div>
 
 	<p>
 		<input type="submit" class="btn btn-success" value="Save">
-		<a href="/" class="btn btn-danger">Cancel</a>
+		<a [routerLink]="['TaskComponent']" class="btn btn-danger">Cancel</a>
 	</p>
 </form>

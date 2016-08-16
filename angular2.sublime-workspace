@@ -4,12 +4,160 @@
 		"selected_items":
 		[
 			[
+				"lo",
+				"logout	method"
+			],
+			[
+				"is",
+				"isLoggedIn	parameter"
+			],
+			[
+				"Router",
+				"Router	alias"
+			],
+			[
+				"au",
+				"authService	property"
+			],
+			[
+				"value",
+				"valueChanges	property"
+			],
+			[
+				"co",
+				"controls	property"
+			],
+			[
+				"nag",
+				"navigateByUrl	method"
+			],
+			[
+				"v",
+				"valid	property"
+			],
+			[
+				"val",
+				"value	property"
+			],
+			[
+				"template",
+				"templateUrl	property"
+			],
+			[
+				"T",
+				"task	property"
+			],
+			[
+				"to",
+				"toString	method"
+			],
+			[
+				"Task",
+				"TaskService	alias"
+			],
+			[
+				"Timer",
+				"TimerComponent	alias"
+			],
+			[
+				"us",
+				"useValue	property"
+			],
+			[
+				"On",
+				"OnReuse	alias"
+			],
+			[
+				"Can",
+				"CanReuse	alias"
+			],
+			[
+				"compo",
+				"ComponentInstruction	alias"
+			],
+			[
+				"Compo",
+				"ComponentInstruction	alias"
+			],
+			[
 				"task",
-				"taskTooltip	property"
+				"taskStore	property"
+			],
+			[
+				"ROUTER",
+				"ROUTER_DIRECTIVES	const"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"di",
+				"div	Tag"
+			],
+			[
+				"re",
+				"required	Attr"
+			],
+			[
+				"R",
+				"ROUTER_PROVIDERS	alias"
+			],
+			[
+				"new",
+				"newTask	parameter"
+			],
+			[
+				"O",
+				"Observable	alias"
+			],
+			[
+				"H",
+				"HTTP_PROVIDERS	const"
+			],
+			[
+				"sh",
+				"SHARED_PROVIDERS	alias"
+			],
+			[
+				"pro",
+				"providers	property"
+			],
+			[
+				"Tass",
+				"TaskIconsComponent	alias"
+			],
+			[
+				"ma",
+				"max-width"
+			],
+			[
+				"Tim",
+				"TimerWidgetComponent	alias"
+			],
+			[
+				"bu",
+				"buttonLabelKey	property"
 			],
 			[
 				"se",
-				"selector	property"
+				"settingsService	property"
+			],
+			[
+				"setti",
+				"settingsService	parameter"
+			],
+			[
+				"Que",
+				"QueuedOnlyPipe	alias"
+			],
+			[
+				"Inj",
+				"Injectable	var"
+			],
+			[
+				"Pip",
+				"Pipe	alias"
 			],
 			[
 				"Pipe",
@@ -24,16 +172,8 @@
 				"TasksComponent	class"
 			],
 			[
-				"T",
-				"TasksService	const"
-			],
-			[
 				"templ",
 				"templateUrl	property"
-			],
-			[
-				"Pip",
-				"PipeTransform	alias"
 			],
 			[
 				"Event",
@@ -46,10 +186,6 @@
 			[
 				"import",
 				"import	imports a module …"
-			],
-			[
-				"new",
-				"newMethod	local var"
 			],
 			[
 				"a",
@@ -128,18 +264,204 @@
 	"buffers":
 	[
 		{
-			"file": "pomodoro-timer.ts",
+			"file": "app/shared/pipes/queued-only.pipe.ts",
 			"settings":
 			{
-				"buffer_size": 1010,
+				"buffer_size": 395,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "pomodoro-timer.html",
+			"file": "app/shared/interfaces/task.ts",
 			"settings":
 			{
-				"buffer_size": 448,
+				"buffer_size": 157,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/shared/pipes/formatted-time.pipe.ts",
+			"settings":
+			{
+				"buffer_size": 336,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/shared/shared.ts",
+			"settings":
+			{
+				"buffer_size": 706,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/timer/timer-widget.component.ts",
+			"settings":
+			{
+				"buffer_size": 1999,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/timer/timer.ts",
+			"settings":
+			{
+				"buffer_size": 255,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/tasks/task-tooltip.directive.ts",
+			"settings":
+			{
+				"buffer_size": 619,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/tasks/task-icons.component.ts",
+			"settings":
+			{
+				"buffer_size": 507,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/tasks/tasks.component.css",
+			"settings":
+			{
+				"buffer_size": 76,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/tasks/tasks.component.html",
+			"settings":
+			{
+				"buffer_size": 2043,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/tasks/tasks.component.ts",
+			"settings":
+			{
+				"buffer_size": 1602,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/tasks/tasks.ts",
+			"settings":
+			{
+				"buffer_size": 355,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/app.component.ts",
+			"settings":
+			{
+				"buffer_size": 1836,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/app.component.html",
+			"settings":
+			{
+				"buffer_size": 682,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/timer/timer.component.ts",
+			"settings":
+			{
+				"buffer_size": 532,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 22 files for \"pomodoros for today\"\n\n0 matches\n\nSearching 22 files for \"today\"\n\nC:\\angular2\\app\\tasks\\tasks.component.html:\n    1  <div class=\"container text-center\">\n    2  	<h3>\n    3: 		{{ queuedPomodoros | i18nPlural: queueHeaderMapping }} for today\n    4  		<span class=\"small\" *ngIf=\"queuedPomodoros > 0\">(Estimated time:\n    5  		{{ queuedPomodoros * timerMinutes | pomodoroFormattedTime }})\n    .\n   40  		 		</td>\n   41  		 		<td class=\"text-center\">{{task.deadline | date: 'fullDate'}}\n   42: 		 			<span *ngIf=\"task.deadline < today\" class=\"label label-danger\">\n   43  		 				Due\n   44  		 			</span>\n\nC:\\angular2\\app\\tasks\\tasks.component.ts:\n   18  })\n   19  export default class TasksComponent implements OnInit {\n   20: 	today: Date;\n   21  	tasks: Task[];\n   22  	queuedPomodoros: number;\n   ..\n   29  		private router: Router)	{\n   30  		this.tasks = this.taskService.taskStore;\n   31: 		this.today = new Date();\n   32  		this.queueHeaderMapping = settingsService.pluralsMap.tasks;\n   33  		this.timerMinutes - settingsService.timerMinutes;\n\nC:\\angular2\\pomodoro-tasks.ts:\n  125  	})\n  126  	class TasksComponent {\n  127: 		today: Date;\n  128  		tasks: Task[];\n  129  		queuedPomodoros: number;\n  ...\n  137  			const taskService: TaskService = new TaskService();\n  138  			this.tasks = taskService.taskStore;\n  139: 			this.today = new Date();\n  140  			this.updateQueuedPomodoros();\n  141  		}\n\n6 matches across 3 files\n",
+			"settings":
+			{
+				"buffer_size": 1447,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "app/tasks/task-editor.component.ts",
+			"settings":
+			{
+				"buffer_size": 1502,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/tasks/task-editor.component.html",
+			"settings":
+			{
+				"buffer_size": 936,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/login/login.component.ts",
+			"settings":
+			{
+				"buffer_size": 1454,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/login/login.component.html",
+			"settings":
+			{
+				"buffer_size": 741,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/shared/services/authentication.service.ts",
+			"settings":
+			{
+				"buffer_size": 838,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/login/login.ts",
+			"settings":
+			{
+				"buffer_size": 75,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/main.ts",
+			"settings":
+			{
+				"buffer_size": 320,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/shared/services/settings.service.ts",
+			"settings":
+			{
+				"buffer_size": 488,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/shared/services/task.service.ts",
+			"settings":
+			{
+				"buffer_size": 1067,
 				"line_ending": "Windows"
 			}
 		},
@@ -147,15 +469,12 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1002,
+				"buffer_size": 798,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "import {\n	Component,\n	Input,\n	Pipe,\n	PipeTransform,\n	Directive,\n	OnInit,\n	HostListener\n} from '@angular/core';\nimport {bootstrap} from '@angular/platform-browser-dynamic';\n\ninterface Task {\n	name: string;\n	deadline: Date;\n	queued: boolean;\n	pomodorosRequired: number;\n}\n\nclass TaskService {\n	public taskStore: Array<Task> = [];\n\n	constructor(){\n		const tasks = [\n		{			\n			name: \"Code an HTML Table\",\n			deadline: \"June 23 2015\",\n			pomodorosRequired: 1\n		},\n		{\n			name: \"Sketch a wireframe for the new homepage\",\n			deadline: \"June 24 2016\",\n			pomodorosRequired: 2\n		},\n		{\n			name: \"Style table with bootstrap styles\",\n			deadline: \"June 25 2016\",\n			pomodorosRequired: 1\n		},\n		{\n			name: \"Reinforce SEO with custom sitemap.xml\",\n			deadline: \"June 26 2016\",\n			pomodorosRequired: 3\n		},\n		];\n\n		this.taskStore = tasks.map(task => {\n			return {\n				name: task.name,\n				deadline: new Date(task.deadline),\n				queued: false,\n				pomodorosRequired: task.pomodorosRequired\n			};\n		});\n	}\n}\n\n@Pipe({\n	name: 'pomodoroFormattedTime'\n})\nclass FormattedTimePipe implements PipeTransform {\n	transform(totalMinutes: number): string {\n		let minutes: number = totalMinutes % 60;\n		let hours: number = Math.floor(totalMinutes / 60);\n		return `${hours}h:${minutes}m`;\n	}\n}\n\n@Pipe({\n	name: 'pomodoroQueuedOnly',\n	pure: false\n})\nclass QueuedOnlyPipe implements PipeTransform{\n	transform(tasks: Task[], ...args: any[]): Task[] {\n		return tasks.filter((task: Task) => {\n			return task.queued === args[0];\n		});\n	}	\n}\n\n@Directive({\n	selector: '[task]'\n})\nclass TaskTooltipDirective {\n	private defaultTooltipText: string;\n	@Input() task: Task;\n	@Input() taskTooltip: any;\n\n	@HostListener('mouseover')\n	onMouseOver(){\n		if(!this.defaultTooltipText && this.taskTooltip){\n			this.defaultTooltipText = this.taskTooltip.innerText;\n		}\n		this.taskTooltip.innerText = this.task.name;\n	}\n	@HostListener('mouseout')\n	onMouseOut() {\n		if(this.taskTooltip){\n			this.taskTooltip.innerText = this.defaultTooltipText;\n		}\n	}\n}\n\n@Component({\n	selector: 'pomodoro-task-icons',\n	template: `<img *ngFor=\"let icon of icons\"\n					src=\"/assets/img/pomodoro.png\"\n					width=\"{{size}}\">`\n})\nclass TaskIconsComponent implements OnInit {\n	@Input() task: Task;\n	icons: Object[] = [];\n	@Input() size: number;\n\n	ngOnInit() {\n		this.icons.length = this.task.pomodorosRequired;\n		this.icons.fill({name: this.task.name});\n	}\n}\n@Component({\n		selector: 'pomodoro-tasks',\n		directives: [TaskIconsComponent, TaskTooltipDirective],\n		pipes: [FormattedTimePipe, QueuedOnlyPipe],\n		styleUrls: ['pomodoro-tasks.css'],\n		templateUrl: 'pomodoro-tasks.html'\n	})\n	class TasksComponent {\n		today: Date;\n		tasks: Task[];\n		queuedPomodoros: number;\n		queueHeaderMapping: any = {\n			'=0': 'No pomodoros',\n			'=1': 'One pomodoro',\n			'other': '# pomodoros'\n		};\n		\n		constructor() {\n			const taskService: TaskService = new TaskService();\n			this.tasks = taskService.taskStore;\n			this.today = new Date();\n			this.updateQueuedPomodoros();\n		}\n\n		toggleTask(task: Task): void {\n			task.queued = !task.queued;\n			this.updateQueuedPomodoros();\n		}\n\n		private updateQueuedPomodoros(): void {\n			this.queuedPomodoros = this.tasks\n				.filter((task: Task) => task.queued)\n				.reduce((pomodoros: number, queuedTask: Task) => {\n					return pomodoros + queuedTask.pomodorosRequired;\n			}, 0);\n		}\n	};\n\n\n\nbootstrap(TasksComponent);",
 			"file": "pomodoro-tasks.ts",
-			"file_size": 3513,
-			"file_write_time": 131152407586503425,
 			"settings":
 			{
 				"buffer_size": 3359,
@@ -163,37 +482,11 @@
 			}
 		},
 		{
-			"file": "pomodoro-tasks.css",
+			"file": "app/shared/data/raw-tasks.json",
 			"settings":
 			{
-				"buffer_size": 74,
-				"line_ending": "Windows",
-				"name": "h3, p {"
-			}
-		},
-		{
-			"file": "pomodoro-tasks.html",
-			"settings":
-			{
-				"buffer_size": 1913,
+				"buffer_size": 443,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "tsconfig.json",
-			"settings":
-			{
-				"buffer_size": 407,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Greetings.ts",
-			"settings":
-			{
-				"buffer_size": 200,
-				"line_ending": "Windows",
-				"name": "export class Greeting{"
 			}
 		}
 	],
@@ -242,15 +535,21 @@
 	},
 	"file_history":
 	[
+		"/C/angular2/tsconfig.json",
+		"/C/angular2/index.html",
+		"/C/angular2/pomodoro-tasks.ts",
+		"/C/angular2/pomodoro-timer.html",
+		"/C/angular2/pomodoro-timer.ts",
+		"/C/angular2/Greetings.ts",
+		"/C/angular2/pomodoro-tasks.html",
+		"/C/angular2/pomodoro-tasks.css",
+		"/C/angular2/app/shared/interfaces/queueable.ts",
 		"/C/angular2/Other.ts",
 		"/C/angular2/Greeter.ts",
 		"/C/Windows/Logs/CBS/CBS.log",
 		"/C/angular2/.gitignore",
-		"/C/angular2/tsconfig.json",
 		"/C/angular2/systemjs.config.js",
 		"/C/angular2/package.json",
-		"/C/angular2/pomodoro-timer.ts",
-		"/C/angular2/index.html",
 		"/C/angular2/hello-angular.ts",
 		"/C/angular2/iVehicle.ts",
 		"/C/angular2/duck-tape.ts",
@@ -260,13 +559,14 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 33.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 117.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -274,6 +574,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"2000",
+			"';\n",
+			"today",
+			"pomodoros for today",
+			"<li><a [routerLink]=\"['TaskComponent']\">Tasks</a></li",
+			">",
+			"(\n",
+			"';",
+			"';\n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -291,114 +600,53 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 12,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "pomodoro-timer.ts",
+					"file": "app/shared/pipes/queued-only.pipe.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1010,
+						"buffer_size": 395,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								324,
-								324
+								36,
+								36
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
 							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "pomodoro-timer.html",
+					"file": "app/shared/interfaces/task.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 448,
+						"buffer_size": 157,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								441,
-								441
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1002,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								630,
-								630
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "pomodoro-tasks.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3359,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3331,
-								3331
+								157,
+								157
 							]
 						],
 						"settings":
@@ -410,53 +658,341 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "pomodoro-tasks.css",
+					"buffer": 2,
+					"file": "app/shared/pipes/formatted-time.pipe.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 74,
+						"buffer_size": 336,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								74,
-								74
+								331,
+								331
 							]
 						],
 						"settings":
 						{
-							"auto_name": "h3, p {",
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 27,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/shared/shared.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 706,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								629,
+								629
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "pomodoro-tasks.html",
+					"buffer": 4,
+					"file": "app/timer/timer-widget.component.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1913,
+						"buffer_size": 1999,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								493,
-								493
+								1994,
+								1994
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1275.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/timer/timer.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 255,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								253,
+								253
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/tasks/task-tooltip.directive.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 619,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								244,
+								244
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/tasks/task-icons.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 507,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								407,
+								407
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/tasks/tasks.component.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 76,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								76,
+								76
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/tasks/tasks.component.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2043,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1916,
+								1916
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1125.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/tasks/tasks.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1602,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1434,
+								1434
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 988.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "app/tasks/tasks.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 355,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								355
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "app/app.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1836,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1831,
+								1831
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1363.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "app/app.component.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 682,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								642,
+								642
 							]
 						],
 						"settings":
@@ -471,27 +1007,264 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "tsconfig.json",
+					"buffer": 14,
+					"file": "app/timer/timer.component.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 407,
+						"buffer_size": 532,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								164,
-								170
+								493,
+								493
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1447,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										257,
+										262
+									],
+									[
+										547,
+										552
+									],
+									[
+										745,
+										750
+									],
+									[
+										919,
+										924
+									],
+									[
+										1150,
+										1155
+									],
+									[
+										1350,
+										1355
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								122,
+								122
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 2,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ 	].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 75.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "app/tasks/task-editor.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1502,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								691,
+								691
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "app/tasks/task-editor.component.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 936,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								331,
+								331
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "app/login/login.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1454,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1252,
+								1252
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 525.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "app/login/login.component.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 741,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								388,
+								388
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "app/shared/services/authentication.service.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 838,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								726,
+								726
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 150.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "app/login/login.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 75,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								75,
+								75
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -501,25 +1274,24 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "Greetings.ts",
+					"buffer": 22,
+					"file": "app/main.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 200,
+						"buffer_size": 320,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								313,
+								313
 							]
 						],
 						"settings":
 						{
-							"auto_name": "export class Greeting{",
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
 							"use_tab_stops": false
 						},
@@ -527,7 +1299,161 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "app/shared/services/settings.service.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 488,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								78,
+								93
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": false,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "app/shared/services/task.service.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1067,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								693,
+								693
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 375.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 798,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								120,
+								120
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "pomodoro-tasks.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3359,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								271,
+								991
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 750.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "app/shared/data/raw-tasks.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 443,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								443,
+								443
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
 					"type": "text"
 				}
 			]
@@ -535,7 +1461,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 33.0
 	},
 	"input":
 	{
@@ -584,7 +1510,7 @@
 	"project": "angular2.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -617,9 +1543,18 @@
 	"selected_group": 0,
 	"settings":
 	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		]
 	},
 	"show_minimap": true,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 188.0,

@@ -1,11 +1,13 @@
 import {Component} from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
 import { TIMER_DIRECTIVES } from './timer/timer';
-import {TimerWidgetComponent} from './timer/timer';
+import { TimerComponent } from './timer/timer';
 import { TASKS_DIRECTIVES } from './tasks/tasks';
 import {TaskComponent,TaskEditorComponent} from './tasks/tasks';
-import { SHARED_PROVIDERS } from './shared/shared';
-import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import { SHARED_PROVIDERS, AuthenticationService } from './shared/shared';
+import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES, Router } from '@angular/router-deprecated';
+import { FORM_PROVIDERS } from '@angular/common';
+import { LoginComponent } from './login/login';
 
 @Component({
 	selector: 'pomodoro-app',
@@ -21,8 +23,14 @@ import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from '@angular/route
 @RouteConfig([
 	{ 
 		path: '',
-		name:'TaskComponent',
-		component: TaskComponent
+		name:'Home',
+		redirectTo: ['TaskComponent']
+	},
+	{
+		path: 'tasks',
+		name: 'TaskComponent',
+		component: TaskComponent,
+		useAsDefault: true
 	},
 	{
 		path: 'tasks/editor',
@@ -30,9 +38,37 @@ import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from '@angular/route
 		component: TaskEditorComponent
 	},
 	{
-		path: 'timer',
+		path: 'timer/...',
 		name: 'TimerComponent',
-		component: TimerWidgetComponent
+		loader: () => {
+			return new Promise(resolve => {
+				setTimeout(() => resolve(TimerComponent), 2000);
+			});
+		}
+	}, {
+		path: 'login',
+		name: 'LoginComponent',
+		component: LoginComponent
 	}
 	])
-export default class AppComponent {}
+export default class AppComponent {
+	userIsLoggedIn: boolean;
+
+	constructor(
+		private authenticationService: AuthenticationService,
+		private router : Router) {
+		authenticationService.userIsLoggedIn.subscribe(isLoggedIn => {
+			this.userIsLoggedIn = isLoggedIn;
+		});
+	}
+
+	logout($event): void {
+		$event.preventDefault();
+
+		this.authenticationService.logout().then(success =>{
+			if(success) {
+				this.router.navigateByUrl('/');
+			}
+		});
+	}
+}

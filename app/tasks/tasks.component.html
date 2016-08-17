@@ -28,9 +28,12 @@
 		 	</tr>
 		 </thead>
 		 <tbody>
-		 	<tr *ngFor="let task of tasks; let i = index">
+		 	<tr *ngFor="let task of tasks; let i = index" 
+		 	class="ng-animate pomodoro-highlight"
+		 	#row="pomodoroHighlight"
+		 	(click)="row.colorize()">
 		 		<th scope="row">{{i}}
-		 			<span *ngIf="task.queued" class="label label-info">
+		 			<span *ngIf="task.queued" class="label label-info ng-animate">
 		 				Queued
 		 			</span>
 		 		</th>

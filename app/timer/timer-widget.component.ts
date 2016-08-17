@@ -1,12 +1,16 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit, ElementRef} from '@angular/core';
 import { SettingsService, TaskService } from '../shared/shared';
 import { RouteParams, CanReuse, OnReuse, ComponentInstruction } from '@angular/router-deprecated';
+import { AnimationBuilder } from '@angular/platform-browser/src/animate/animation_builder';
+import { CssAnimationBuilder } from '@angular/platform-browser/src/animate/css_animation_builder';
 
 @Component({
 	selector: 'pomodoro-timer-widget',
+	styleUrls: ['app/timer/timer-widget.component.css'],
 	template : `
 		<div class="text-center">
-			<img src="/app/shared/assets/img/pomodoro.png">
+			<img src="/app/shared/assets/img/pomodoro.png"
+				[ngClass]="{ pulse: !isPaused }">
 			<h3><small>{{ taskName }}</small></h3>
 			<h1> {{ minutes}}:{{ seconds | number: '2.0'}} </h1>
 			<p>
@@ -23,13 +27,23 @@ export default class TimerWidgetComponent implements CanReuse, OnReuse {
 	buttonLabelKey: string;
 	buttonLabelsMap: any;
 	taskName: string;
+	fadeInAnimationBuilder: CssAnimationBuilder;
 
 	constructor(
 		private settingsService: SettingsService,
 		private routeParams: RouteParams,
-		private taskService: TaskService
+		private taskService: TaskService,
+		private animationBuilder: AnimationBuilder,
+		private elementRef: ElementRef
 		) {
 		this.buttonLabelsMap = settingsService.labelsMap.timer;
+
+		this.fadeInAnimationBuilder = animationBuilder.css();
+		this.fadeInAnimationBuilder.setDuration(1000)
+			.setDelay(300)
+			.setFromStyles({ opacity: 0, marginLeft: 500})
+			.setToStyles({ opacity: 1, marginLeft: 0});
+
 	}
 
 	ngOnInit(): void {
@@ -40,6 +54,11 @@ export default class TimerWidgetComponent implements CanReuse, OnReuse {
 		if (!isNaN(taskIndex)) {
 			this.taskName = this.taskService.taskStore[taskIndex].name;
 		}
+
+		const anim = this.fadeInAnimationBuilder.start(
+			this.elementRef.nativeElement.firstElementChild
+			);
+		anim.onComplete(()=> alert('blah'));
 	}
 
 	resetPomodoro(): void{

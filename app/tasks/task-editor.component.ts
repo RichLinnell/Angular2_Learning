@@ -21,7 +21,7 @@ import {Task, TaskService, AuthenticationService} from '../shared/shared';
     .ng-untouched { border-color: #999999; }
   `]
 })
-@CanActivate(AuthenticationService.isAuthorised)
+
 export default class TaskEditorComponent implements OnActivate, CanDeactivate, OnDeactivate{
 	task: Task;
 	changesSaved: boolean;
@@ -48,7 +48,10 @@ export default class TaskEditorComponent implements OnActivate, CanDeactivate, O
 		next: ComponentInstruction, prev: ComponentInstruction): void {
 		this.title.setTitle('Welcome to the Task Form!');
 	}
-	routerCanDeactivate(): Promise<boolean> | boolean {
+	routerCanDeactivate(
+		next: ComponentInstruction,
+		prev: ComponentInstruction
+		): Promise<boolean> | boolean {
 		return this.changesSaved || confirm('Are you sure you wanna go?');
 	}
 	routerOnDeactivate(): void {
